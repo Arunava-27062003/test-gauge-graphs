@@ -10,10 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "apexcharts": "^3.41.0",
+    "classcat": "^5.0.4",
+    "d3-ease": "^3.0.1",
     "lodash": "^4.17.21",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-apexcharts": "^1.4.0",
     "react-dom": "^18.2.0",
-    "react-gauge-component": "^1.1.0"
+    "react-gauge-component": "^1.1.0",
+    "use-gauge": "^0.6.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

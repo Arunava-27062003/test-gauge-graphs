@@ -1,26 +1,44 @@
-import GaugeOne from "./Components/GaugeOne";
-import GaugeTwo from "./Components/GaugeTwo";
+// import GaugeOne from "./Components/GaugeOne";
+// import GaugeTwo from "./Components/GaugeTwo";
 import CustomGauge from "./Components/CustomGauge";
+// import PowerGauge from "./Components/PowerGauge";
+import LineChart from "./Components/LineChart";
+import { useState } from "react";
 
 function App() {
+  const data = [40, 60, 80, 70];
+
+  const [view, setView] = useState({
+    graph: false,
+    gauge: true,
+  });
+
   const handleClick = () => {
     console.log("clicked");
+    setView({
+      graph: !view.graph,
+      gauge: !view.gauge,
+    });
   };
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         <div className="flex flex-row items-center justify-center w-full h-full">
-          <div className="flex flex-row">
-            <div className="shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] m-5">
-              <GaugeOne />
+          {view.gauge ? (
+            <div className="flex xl:flex-row lg:flex-row md:flex-col sm:flex-col">
+              {data.map((item, index) => {
+                return (
+                  <div key={index} className="shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] m-5 flex items-center justify-center">
+                    <CustomGauge key={index} value={item} />
+                  </div>
+                );
+              })}
             </div>
-            <div className="shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] h-64 m-5 flex items-center justify-center">
-              <GaugeTwo />
+          ) : (
+            <div>
+              <LineChart />
             </div>
-            <div className="shadow-[rgba(7,_65,_210,_0.1)_0px_9px_30px] m-5 flex items-center justify-center">
-              <CustomGauge />
-            </div>
-          </div>
+          )}
         </div>
         <div>
           <button

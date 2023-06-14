@@ -5,8 +5,8 @@ body {
 
 .wrapper {
   display: table;
-  margin: 0 auto;
-  padding: 35px 40px 40px;
+  /* margin: 0 auto; */
+  padding: 35px 40px 15px;
   border-radius: 6px;
 }
 
@@ -14,10 +14,37 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   color: rgba(7, 7, 7, 0.74);
-  margin: 1px 0 5px;
-  font-weight: semi-bold;
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
+.meter{
+  width:125%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: -16px;
+}
+
+.a{
+  transform: translate(0px, -17px) ;
+}
+.b{
+  transform: translate(-25px, -80px) ;
+}
+.c{
+  transform: translate(-16px, -118px) ;
+}
+.d{
+  
+  transform: translate(8px, -119px) ;
+}
+.e{
+  transform: translate(25px, -79px) ;
+}
+.f{
+  transform: translate(-5px, -17px) ;
+}
 .gauge {
   font-family: Arial, Helvetica, sans-serif;
   background: #e7e7e7;
@@ -86,7 +113,9 @@ body {
   box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.38);
   z-index: 2;
   /* Add the following line to rotate the needle based on user input */
+  transition: all 0.5s ease-in;
   transform: rotate(0deg);
+
 }
 
 .slice-colors .st {
@@ -144,50 +173,3 @@ body {
   width: 80px;
 }
 
-@keyframes speed {
-  0% {
-    transform: rotate(0);
-  }
-  40% {
-    transform: rotate(180deg);
-  }
-  55% {
-    transform: rotate(170deg);
-  }
-  75% {
-    transform: rotate(180deg);
-  }
-}
-
-@keyframes simplePulse {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 0.98;
-  }
-}
-
-@-webkit-keyframes speed {
-  0% {
-    transform: rotate(0);
-  }
-  40% {
-    transform: rotate(180deg);
-  }
-  55% {
-    transform: rotate(170deg);
-  }
-  75% {
-    transform: rotate(180deg);
-  }
-}
-
-@-webkit-keyframes simplePulse {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 0.98;
-  }
-}
