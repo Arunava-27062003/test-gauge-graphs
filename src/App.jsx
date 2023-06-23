@@ -1,5 +1,6 @@
 import CustomGauge from "./Components/CustomGauge";
-import LineChart from "./Components/LineChart";
+// import LineChart from "./Components/LineChart";
+import Gauge from "./Components/Gauge";
 import { useState } from "react";
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
             </div>
           ) : (
             <div>
-              <LineChart />
+              <Gauge />
             </div>
           )}
         </div>
