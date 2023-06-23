@@ -1,15 +1,21 @@
-// import React from 'react'
-import { useEffect } from "react";
+// import React from "react";
+import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import "./custom.css";
 
 function CustomGauge({ value }) {
+    const needleRef = useRef(null);
+  const valueDivRef = useRef(null);
   // move the needle according to the value
   useEffect(() => {
-    const needle = document.querySelector(".needle");
-    const valueDiv = document.querySelector(".wrapper-header");
-    // change only the needle position according to the value passed
+    // console.log("value", value);
+    // const needle = document.querySelector(".needle");
+    // const valueDiv = document.querySelector(".wrapper-header");
+    const needle = needleRef.current;
+    const valueDiv = valueDivRef.current;
     needle.style.transform = `rotate(${value * 1.8}deg)`;
+
+   
     valueDiv.innerHTML = `${value} ºC`;
   }, [value]);
 
@@ -24,7 +30,7 @@ function CustomGauge({ value }) {
             <div className="st slice-item" id="item-4"></div>
             <div className="st slice-item" id="item-5"></div>
           </div>
-          <div className="needle"></div>
+          <div className="needle" ref={needleRef}></div>
           <div className="gauge-center"></div>
         </div>
         <div className="meter">
@@ -35,8 +41,8 @@ function CustomGauge({ value }) {
           <span className="e">80</span>
           <span className="f">100</span>
         </div>
+        <h1 className="wrapper-header" ref={valueDivRef}>{value}</h1>
       </div>
-      <h1 className="wrapper-header">0 ºC</h1>
     </div>
   );
 }

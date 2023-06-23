@@ -1,8 +1,3 @@
-body {
-  background: linear-gradient(45deg, #15222e, #8100e0);
-  height: 100vh;
-}
-
 .wrapper {
   display: table;
   /* margin: 0 auto; */

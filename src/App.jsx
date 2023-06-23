@@ -1,12 +1,9 @@
-// import GaugeOne from "./Components/GaugeOne";
-// import GaugeTwo from "./Components/GaugeTwo";
 import CustomGauge from "./Components/CustomGauge";
-// import PowerGauge from "./Components/PowerGauge";
 import LineChart from "./Components/LineChart";
 import { useState } from "react";
 
 function App() {
-  const data = [40, 60, 80, 70];
+  const data = [10, 20, 30, 40, 50];
 
   const [view, setView] = useState({
     graph: false,
